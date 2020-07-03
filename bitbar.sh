@@ -15,7 +15,7 @@
 # <bitbar.author>Nicholas Edwards</bitbar.author>
 # <bitbar.author.github>edwardsnjd</bitbar.author.github>
 # <bitbar.desc>List all recent builds you can see in Buildkite.</bitbar.desc>
-# <bitbar.image>https://github.com/edwardsnjd/bitbar-buildkite/screenshot-main.gif</bitbar.image>
+# <bitbar.image>https://raw.githubusercontent.com/edwardsnjd/bitbar-buildkite/master/screenshot.gif</bitbar.image>
 # <bitbar.dependencies>bash,curl,jq,buildkite.com</bitbar.dependencies>
 # <bitbar.abouturl>https://github.com/edwardsnjd/bitbar-buildkite/</bitbar.abouturl>
 
