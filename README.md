@@ -1,6 +1,6 @@
 # Bitbar Buildkite Plugin
 
-A [Bitbar][bitbar] plugin to display your recent Buildkite.com builds on the OS X menu bar.
+A [Bitbar][bitbar] plugin to display your recent [Buildkite][buildkite] builds on the OS X menu bar.
 
 ## Features
 
@@ -28,3 +28,4 @@ Here's a video showing it in action:
 
 [bitbar]: https://getbitbar.com/
 [jq]: https://stedolan.github.io/jq/
+[buildkite]: https://buildkite.com/
