@@ -45,7 +45,7 @@ ICONS_JSON='{
   "passed": "✅",
   "failed": "❌",
   "canceled": "⏹",
-  "paused": "⏸"    
+  "paused": "⏸"
 }'
 
 # Functions:
