@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# List recent BuildKite builds
+# List recent Buildkite builds
 #
 # Example output:
 #  $ ./bitbar.sh
