@@ -54,9 +54,9 @@ ICONS_JSON='{
 
 # fetch_recent_builds_json :: () => Json[]
 function fetch_recent_builds_json() {
-  local auth_header="Authorization: Bearer ${BUILD_KITE_API_TOKEN}"
-  local since=$(date -u -v-${HOURS_BACK_TO_FETCH}H +"%Y-%m-%dT%H:%MZ")
-  local url="https://api.buildkite.com/v2/builds?created_from=${since}"
+  local -r since=$(date -u -v-${HOURS_BACK_TO_FETCH}H +"%Y-%m-%dT%H:%MZ")
+  local -r url="https://api.buildkite.com/v2/builds?created_from=${since}"
+  local -r auth_header="Authorization: Bearer ${BUILD_KITE_API_TOKEN}"
 
   "${CURL}" --silent -H "${auth_header}" "${url}"
 }
@@ -79,6 +79,7 @@ function transform_builds() {
 
 # format_active_builds :: Json[] -> String
 function format_active_builds() {
+  # shellcheck disable=SC2016
   run_jq -r '
     # is_active_job :: Job -> bool
     def is_active_job:
@@ -99,6 +100,7 @@ function format_active_builds() {
 
 # format_builds :: Json[] -> String[]
 function format_builds() {
+  # shellcheck disable=SC2016
   run_jq -r '
     # is_real_job :: Job -> bool
     def is_real_job:
@@ -160,6 +162,7 @@ function format_builds() {
 
 # format_blank_slate :: Json[] -> String[]
 function format_blank_slate() {
+  # shellcheck disable=SC2016
   run_jq -r '
     if length == 0 then
       "No recent builds",
@@ -201,7 +204,7 @@ function print_instructions() {
 # main :: () -> String[]
 function main() {
   # Get the data
-  local builds=$(fetch_recent_builds_json | transform_builds)
+  local -r builds=$(fetch_recent_builds_json | transform_builds)
 
   # Print bitbar output
   print_bar_row "${builds}"
